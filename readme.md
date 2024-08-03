@@ -2,7 +2,7 @@ User Management System
 
 Overview
 
-A comprehensive system for managing user accounts, profiles, and roles, including professional status upgrades and more.
+A comprehensive system for managing user accounts, profiles, and roles, including professional status upgrades, user search, and filtering.
 
 Table of Contents
 
@@ -27,7 +27,6 @@ Create a .env file and configure it with your environment variables (e.g., MailT
 Build and run the project:
 docker compose up --build
 
-
 Usage
 
 Access the API documentation at http://localhost/docs to explore the endpoints and test the functionalities.
@@ -42,6 +41,17 @@ Professional Status Upgrade
 Endpoint: /admin/user/professional-status
 Method: POST
 Description: Upgrade a user's professional status (Admin only).
+User Search and Filtering
+Endpoint: /users
+Method: GET
+Description: Search and filter users by username, email, role, and other criteria.
+Query Parameters:
+username (optional): Search by username.
+email (optional): Search by email.
+role (optional): Filter by user role.
+created_before (optional): Filter users created before a specific date.
+created_after (optional): Filter users created after a specific date.
+is_active (optional): Filter by active status.
 Contributing
 
 Fork the repository.
@@ -54,12 +64,10 @@ Testing
 Run tests using:
 docker compose exec fastapi pytest
 
-
 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Authors and Acknowledgments
 
-Tisha Madhok 
-Special thanks to Contributors.
+Tisha Madhok
